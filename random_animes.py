@@ -15,4 +15,5 @@ mood=input()
 #loop through and find matching mood
 for item in animes:
     if item [1] == mood:
-        print[mood+ 'anime:'+ item[0]]
+        print(mood + 'anime:' + item[0])
+
