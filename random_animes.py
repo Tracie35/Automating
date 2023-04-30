@@ -1,19 +1,29 @@
-from random import choice 
+from random import choice
 
-# list of animes
-animes = [['naruto', 'bleach', 'classroom assassin', 'one piece', 'series'],
-          ['Fairy Tail', 'Black Clover', 'Code Geass', 'Sailor Moon', 'series'],
-          ['Dragon Ball Z', 'Death Note', 'Attack on Titan', 'My Hero Academia', 'series']]
+animes = [
+    ['naruto', 'Fairy Tail', 'Dragon Ball Z'],
+    ['bleach', 'Black Clover', 'Death Note'],
+    ['classroom assassin', 'Code Geass', 'Attack on Titan'],
+    ['one piece', 'Sailor Moon', 'My Hero Academia']
+]
+mood =[
+    ['happy', 'sad', 'excited', 'bored']
+]
+mood_anime_map = {
+    'happy': ['naruto', 'Fairy Tail', 'Dragon Ball Z', 'Sailor Moon'],
+    'sad': ['bleach', 'Death Note', 'Attack on Titan'],
+    'excited': ['classroom assassin', 'Code Geass', 'My Hero Academia'],
+    'bored': ['one piece', 'Black Clover']
+}
 
-# print random anime from list
-print(choice(animes))
+print(choice(mood))
 
-#mood
-print('what mood are you in? ')
-mood=input()
+print('What mood are you in? ')
+mood = input()
 
-#loop through and find matching mood
-for item in animes:
-    if item [1] == mood:
-        print(mood + 'anime:' + item[0])
-
+if mood in mood_anime_map:
+    print('Here are some anime recommendations for your mood:')
+    for anime in mood_anime_map[mood]:
+        print(anime)
+else:
+    print('Sorry, we dont have any anime recommendations for that mood.')
